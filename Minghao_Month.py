@@ -27,75 +27,29 @@ import numpy as np
 g1 = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2019-12-31.graphml.bz2")
 names = locals()
 graphs = []
-
-for m in range(1,13):
-    if m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10:
-        for i in range(4):
-            if i == 0:
-                for j in range(9):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+ str(i) +str(j+1)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 1:
-                for j in range(10):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 2:
-                for j in range(10):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 3:
-                for j in range(2):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-    if m == 4 or m == 6 or m == 9 or m == 11:
-        for i in range(4):
-            if i == 0:
-                for j in range(9):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+ str(i) +str(j+1)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 1:
-                for j in range(10):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 2:
-                for j in range(10):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 3:
-                for j in range(1):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-    if m == 12:
-        for i in range(2):
-            if i == 0:
-                for j in range(9):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+ str(i) +str(j+1)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 1:
-                for j in range(5):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-    if m == 2:
-        for i in range(3):
-            if i == 0:
-                for j in range(9):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+ str(i) +str(j+1)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 1:
-                for j in range(10):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
-            if i == 2:
-                for j in range(10):
-                    names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
-                    graphs.append(names['g' + str(i) +  str(j+1) ])
+for i in range(4):
+    if i == 0:
+        for j in range(9):
+            names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+ str(i) +str(j+1)+".graphml.bz2")
+            graphs.append(names['g' + str(i) +  str(j+1) ])
+    if i == 1:
+        for j in range(10):
+            names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
+            graphs.append(names['g' + str(i) +  str(j+1) ])
+    if i == 2:
+        for j in range(10):
+            names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
+            graphs.append(names['g' + str(i) +  str(j+1) ])
+    if i == 3:
+        for j in range(2):
+            names['g' + str(i) +  str(j+1) ] = nx.read_graphml("/srv/abacus-1/txnetworks_blockchains/bitcoin/heur_1_networks_day/2020-01-"+str(i)+ str(j)+".graphml.bz2")
+            graphs.append(names['g' + str(i) +  str(j+1) ])
 
 idx = len(graphs)
 
 G = nx.Graph()
 while idx >= 0:
     idx -= 1
-    graphs[idx].remove_nodes_from(list(n for n in graphs[idx] if n not in g1))
     G = nx.compose(G, graphs[idx])
     attr_n_tx = {e: G.edges[e]['n_tx'] + graphs[idx].edges[e]['n_tx'] for e in G.edges & graphs[idx].edges}
     nx.set_edge_attributes(G, attr_n_tx, 'n_tx')
@@ -123,21 +77,26 @@ def max_min_normalization(G):
     nx.set_edge_attributes(G, weight, name="weight")
     return weight
 
+
+G.remove_nodes_from(list(n for n in G if n not in g1))
+
 max_min_normalization(G)
 
-dc = nx.degree_centrality(G)
-ec = nx.eigenvector_centrality(G,weight='weight')
-cc = nx.closeness_centrality(G)
+dc1 = nx.degree_centrality(G)
+ec1 = nx.eigenvector_centrality(G,weight='weight')
+cc1 = nx.closeness_centrality(G)
 
 #df_nodes1 = nx.to_pandas_adjacency(G2)
-def compute_features(node_id):
+def compute_features1(node_id):
     # in general this could compute something based on other features, but for this example,
     # we don't have any other features, so we'll just do something basic with the node_id
-    return [dc[node_id],ec[node_id],cc[node_id]]
+    return [dc1[node_id],ec1[node_id],cc1[node_id]]
+
 
 
 for node_id, node_data in G.nodes(data=True):
-    node_data["feature"] = compute_features(node_id)
+    node_data["feature"] = compute_features1(node_id)
+
 
 Gs = StellarGraph.from_networkx(
     G,node_features="feature"
@@ -208,7 +167,7 @@ for name, val in zip(model.metrics_names, init_test_metrics):
 history = model.fit(train_flow, epochs=epochs, validation_data=test_flow, verbose=2)
 
 gra = sg.utils.plot_history(history, return_figure=True)
-gra.savefig('Minghao_Year.png')
+gra.savefig('Minghao_Month.png')
 
 
 train_metrics = model.evaluate(train_flow)
